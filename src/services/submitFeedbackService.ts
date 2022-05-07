@@ -36,9 +36,10 @@ export class SubmitFeedbackService {
     await this.mailAdapter.sendMail({
       subject: 'Feedback cadastrado com sucesso',
       body: [
-        '<div style="color: blue; font-size: 32px">',
-        `<p>Tipo do feedback: ${type}</p>`,
-        `<p>Comentário: ${comment}</p>`,
+        '<div style="color: #333; font-size: 18px">',
+        `<p><strong>Tipo do feedback:</strong> ${type}</p>`,
+        `<p><strong>Comentário:</strong> ${comment}</p>`,
+        screenshot ? `<img width="900px" src="${screenshot}" />` : '',
         '</div>',
       ].join('\n')
     })
